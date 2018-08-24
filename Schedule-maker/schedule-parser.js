@@ -1,3 +1,4 @@
+injectJQ()
 function injectJQ()
 {
     var head = document.getElementsByTagName("head")[0];
@@ -6,13 +7,7 @@ function injectJQ()
     script.onload = function(){performOps();}
     head.appendChild(script);
 }
-injectJQ()
 function performOps(){
-    /*$('<script>')
-    .attr('type', 'text/javascript')
-    .attr('src', '//github.com/mozilla-comm/ical.js/releases/download/v1.2.2/ical.min.js')
-    .attr('onload', parseSchedule())
-    .appendTo('head');*/
     var head = document.getElementsByTagName("head")[0];
     var script = document.createElement("script");
     script.src = "//github.com/mozilla-comm/ical.js/releases/download/v1.2.2/ical.min.js";
@@ -48,14 +43,12 @@ function parseSchedule(){
         classI.nbr = course[1].split(" ")[1].slice(1, -1);
         item.course = classI;
         var sched = tbodymain.children[i].children[1].firstElementChild.innerText.split('\n');
-        //item["sched"] = sched[0];
         fullSched = {};
         days = sched[0].split(" ")[0].split(/(?=[A-Z])/);
         fullSched.days = days.map(function(e){return e.toUpperCase()});
         time = {}
         time.from = convertTime(sched[0].split(" ")[1]);
         time.to = convertTime(sched[0].split(" ")[3]);
-        //fullSched["time"] = sched[0].split(" ")[1] + " to " + sched[0].split(" ")[3];
         fullSched.time = time;
         item.sched = fullSched;
         item.location = sched[1];
@@ -141,7 +134,6 @@ function createICal(jsonObj){
             cal.addSubcomponent(vevent);
         }
     }
-    //console.log(cal.toString());
     let calendar_str = cal.toString();
     let download_str_uri = 'data:text/calender;charset=utf-8,' + encodeURIComponent(calendar_str);
     console.log(download_str_uri);
