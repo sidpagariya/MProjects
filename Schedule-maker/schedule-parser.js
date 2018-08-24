@@ -100,8 +100,9 @@ function createICal(jsonObj){
 
     for(course of jsonObj.schedule) {
         let classTitle = course.course.class;
+        console.log(classTitle);
         let classType = course.course.type;
-        let classSec = course.course.type;
+        let classSec = course.course.sec;
         let classNbr = course.course.nbr;
         let byday = course.sched.days;
         let start_time = course.sched.time.from;
