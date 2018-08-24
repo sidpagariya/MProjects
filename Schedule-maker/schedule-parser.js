@@ -90,7 +90,8 @@ function createICal(jsonObj){
         tzid
     });
     let cal = new ICAL.Component(['vcalendar', [["prodid", {}, "text", "-//SidPagariya.ML//UMich "+jsonObj['term']+"//EN"],
-    ["version", {}, "text", "2.0"]], []]);
+    ["version", {}, "text", "2.0"],
+    ["X-Apple-Calendar-Color", {}, "text", "#FFCD00"]], []]); //Or maybe just #002B64 :D
     arbor_time = 'America/Detroit';
     cal.updatePropertyWithValue('X-WR-TIMEZONE', arbor_time);
     cal.addSubcomponent(vtimezoneComp);
