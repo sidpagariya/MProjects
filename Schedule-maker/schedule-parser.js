@@ -79,7 +79,6 @@ RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
 END:DAYLIGHT
 END:VTIMEZONE
 `;
-
 function createICal(jsonObj){
     console.log(jsonObj);
     window.json = jsonObj;
@@ -147,13 +146,12 @@ function createICal(jsonObj){
     console.log(download_str_uri);
     downloadURI(download_str_uri, jsonObj['term']+'.ics');
 }
-
 function downloadURI(uri, name) {
-  var link = document.createElement("a");
-  link.download = name;
-  link.href = uri;
-  document.body.appendChild(link);
-  link.click();
-  document.body.removeChild(link);
-  delete link;
+    var link = document.createElement("a");
+    link.download = name;
+    link.href = uri;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    delete link;
 }
