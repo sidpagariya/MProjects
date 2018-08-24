@@ -1,0 +1,11 @@
+{
+    "name": "UMich ScheduleMaker",
+    "version": "1.0",
+    "description": "Download an iCal file of your UMich Schedule!",
+    "permissions": ["storage"],
+    "background": {
+        "scripts": ["background.js"],
+        "persistent": false
+    },
+    "manifest_version": 2
+}
