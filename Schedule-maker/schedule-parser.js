@@ -138,7 +138,7 @@ function createICal(jsonObj){
             'byday': byday
         });
         vevent.updatePropertyWithValue('rrule', rrule);
-        if (classSec != 'MID'){
+        if (classType != 'MID'){
             cal.addSubcomponent(vevent);
         }
     }
