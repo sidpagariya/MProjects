@@ -95,7 +95,7 @@ function createICal(jsonObj){
     arbor_time = 'America/Detroit';
     cal.updatePropertyWithValue('X-WR-TIMEZONE', arbor_time);
     cal.addSubcomponent(vtimezoneComp);
-    var start_date = new Date(2018, 8, 5);
+    var start_date = new Date(2018, 8, 4);
     var end_date = new Date(2018, 11, 12);
 
     for(course of jsonObj.schedule) {
@@ -106,7 +106,7 @@ function createICal(jsonObj){
         let byday = course.sched.days;
         let start_time = course.sched.time.from;
         let end_time = course.sched.time.to;
-        let conversionO = {MO:5,TU:6,WE:0,TH:1,FR:2,SA:3,SU:4};
+        let conversionO = {MO:6,TU:0,WE:1,TH:2,FR:3,SA:4,SU:5};
         var minDiff = 10;
         for (day of byday){
             if (conversionO[day] < minDiff){
