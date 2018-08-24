@@ -8,15 +8,19 @@ table
                 table
                     tbody
                         tr
+                            th -> a -> [Canvas Link]
                             th -> a -> Class
                             th -> a -> Schedule
                         tr
+                            td -> div -> a -> Canvas Link
                             td -> div -> span -> Class Name/Section
                             td -> div -> span -> Days/Times/Location
                         tr
+                            td -> div -> a -> Canvas Link
                             td -> div -> span -> Class Name/Section
                             td -> div -> span -> Days/Times/Location
                         tr
+                            td -> div -> a -> Canvas Link
                             td -> div -> span -> Class Name/Section
                             td -> div -> span -> Days/Times/Location
                         tr...

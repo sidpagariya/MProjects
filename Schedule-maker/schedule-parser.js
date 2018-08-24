@@ -33,16 +33,20 @@ function parseSchedule(){
     var jsonObj = {};
     jsonObj.term = termsched;
     var schedule = [];
+    var offset = 0;
+    if (tbodymain.children[0].children.length != 2){
+        offset = 1;
+    }
     for (var i=1; i<tbodymain.childElementCount; i++){
         item = {}
-        var course = tbodymain.children[i].children[0].firstElementChild.innerText.split('\n');
+        var course = tbodymain.children[i].children[0+offset].firstElementChild.innerText.split('\n');
         classI = {}
         classI.class = course[0].split("-")[0];
         classI.sec = course[0].split("-")[1];
         classI.type = course[1].split(" ")[0];
         classI.nbr = course[1].split(" ")[1].slice(1, -1);
         item.course = classI;
-        var sched = tbodymain.children[i].children[1].firstElementChild.innerText.split('\n');
+        var sched = tbodymain.children[i].children[1+offset].firstElementChild.innerText.split('\n');
         fullSched = {};
         days = sched[0].split(" ")[0].split(/(?=[A-Z])/);
         fullSched.days = days.map(function(e){return e.toUpperCase()});
