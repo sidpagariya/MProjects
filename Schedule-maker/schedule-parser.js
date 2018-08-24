@@ -105,8 +105,15 @@ function createICal(jsonObj){
         let byday = course.sched.days;
         let start_time = course.sched.time.from;
         let end_time = course.sched.time.to;
-        let dtstart = new Date(start_date.getUTCFullYear(), start_date.getUTCMonth(), start_date.getUTCDate(), start_time.hr, start_time.min, 0);
-        let dtend = new Date(start_date.getUTCFullYear(), start_date.getUTCMonth(), start_date.getUTCDate(), end_time.hr, end_time.min, 0);
+        let conversionO = {MO:5,TU:6,WE:0,TH:1,FR:2,SA:3,SU:4};
+        var minDiff = 10;
+        for (day of byday){
+            if (conversionO[day] < minDiff){
+                minDiff = conversionO[day];
+            }
+        }
+        let dtstart = new Date(start_date.getUTCFullYear(), start_date.getUTCMonth(), start_date.getUTCDate()+minDiff, start_time.hr, start_time.min, 0);
+        let dtend = new Date(start_date.getUTCFullYear(), start_date.getUTCMonth(), start_date.getUTCDate()+minDiff, end_time.hr, end_time.min, 0);
         let location = course['location'];
         String.prototype.newFormat = function() {
             var args = arguments;
