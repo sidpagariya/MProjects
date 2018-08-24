@@ -85,7 +85,8 @@ TZNAME:EDT
 RRULE:FREQ=YEARLY;BYMONTH=3;BYDAY=2SU
 END:DAYLIGHT
 END:VTIMEZONE
-`
+`;
+
 function createICal(jsonObj){
     console.log(jsonObj);
     window.json = jsonObj;
