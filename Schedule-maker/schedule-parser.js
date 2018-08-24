@@ -51,8 +51,14 @@ function parseSchedule(){
         days = sched[0].split(" ")[0].split(/(?=[A-Z])/);
         fullSched.days = days.map(function(e){return e.toUpperCase()});
         time = {}
-        time.from = convertTime(sched[0].split(" ")[1]);
-        time.to = convertTime(sched[0].split(" ")[3]);
+        try {
+            time.from = convertTime(sched[0].split(" ")[1]);
+            time.to = convertTime(sched[0].split(" ")[3]);
+        }
+        catch(err) {
+            // this means time is not provided
+            continue;
+        }
         fullSched.time = time;
         item.sched = fullSched;
         item.location = sched[1];
