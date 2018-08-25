@@ -51,8 +51,14 @@ function parseSchedule(){
         days = sched[0].split(" ")[0].split(/(?=[A-Z])/);
         fullSched.days = days.map(function(e){return e.toUpperCase()});
         time = {}
-        time.from = convertTime(sched[0].split(" ")[1]);
-        time.to = convertTime(sched[0].split(" ")[3]);
+        try {
+            time.from = convertTime(sched[0].split(" ")[1]);
+            time.to = convertTime(sched[0].split(" ")[3]);
+        }
+        catch(err) {
+            // this means time is not provided
+            continue;
+        }
         fullSched.time = time;
         item.sched = fullSched;
         item.location = sched[1];
@@ -107,6 +113,9 @@ function createICal(jsonObj){
         let classSec = course.course.sec;
         let classNbr = course.course.nbr;
         let byday = course.sched.days;
+        if (!course.sched.time){
+            continue;
+        }
         let start_time = course.sched.time.from;
         let end_time = course.sched.time.to;
         let conversionO = {MO:6,TU:0,WE:1,TH:2,FR:3,SA:4,SU:5};
