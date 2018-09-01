@@ -49,7 +49,7 @@ function parseSchedule(){
         var sched = tbodymain.children[i].children[1+offset].firstElementChild.innerText.split('\n');
         subscheds = [];
         locs = [];
-        for (var j=0; j<sched.length/2; j++){
+        for (var j=0; j<sched.length; j+=2){
             subschedObj = {};
             days = sched[j].split(" ")[0].split(/(?=[A-Z])/);
             subschedObj.days = days.map(function(e){return e.toUpperCase()});
