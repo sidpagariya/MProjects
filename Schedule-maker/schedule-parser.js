@@ -132,8 +132,8 @@ function createICal(jsonObj){
             let end_time = course.sched[i].time.to;
 
             // Need to change this every term :(
-            let offset = 6;
-            //Fall 2018 ^
+            let offset = 5;
+            //Winter 2019 ^
             let conversionO = {MO:weekMod(0+offset),TU:weekMod(1+offset),WE:weekMod(2+offset),TH:weekMod(3+offset),FR:weekMod(4+offset),SA:weekMod(5+offset),SU:weekMod(6+offset)};
             var minDiff = 10;
             for (day of byday){
