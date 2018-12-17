@@ -114,8 +114,8 @@ function createICal(jsonObj){
     arbor_time = 'America/Detroit';
     cal.updatePropertyWithValue('X-WR-TIMEZONE', arbor_time);
     cal.addSubcomponent(vtimezoneComp);
-    var start_date = new Date(2019, 1, 9);
-    var end_date = new Date(2019, 4, 23);
+    var start_date = new Date(2019, 0, 9);
+    var end_date = new Date(2019, 3, 23);
 
     for(course of jsonObj.schedule) {
         let classTitle = course.course.class;
