@@ -134,7 +134,7 @@ function createICal(jsonObj){
             let end_time = course.sched[i].time.to;
 
             // Need to change this every term :(
-            let offset = 7; //Schedules starting on Monday: 7, Tuesday: 6, etc.
+            let offset = 5; //Schedules starting on Monday: 7, Tuesday: 6, etc.
             //Winter 2019 ^
 
             let conversionO = {MO:weekMod(0+offset),TU:weekMod(1+offset),WE:weekMod(2+offset),TH:weekMod(3+offset),FR:weekMod(4+offset),SA:weekMod(5+offset),SU:weekMod(6+offset)};
