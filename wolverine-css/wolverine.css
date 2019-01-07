@@ -1,0 +1,247 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,400i,700,700i');
+
+#ACE_DERIVED_SSS_SCL_ > tbody > tr:first-child > td:first-child {
+    display: none !important;
+}
+
+#ACE_\$ICField279 > tbody > tr:nth-child(2) > td:first-child, #ACE_\$ICField279 > tbody > tr:nth-child(4) > td:first-child, #ACE_\$ICField279 > tbody > tr:nth-child(6) > td:first-child {
+    display: none !important;
+}
+
+#ACE_\$ICField279 > tbody > tr:nth-child(2) > td:nth-child(2), #ACE_\$ICField279 > tbody > tr:nth-child(4) > td:nth-child(2), #ACE_\$ICField279 > tbody > tr:nth-child(6) > td:nth-child(2) {
+    width: 100% !important;
+}
+
+#classicbackbuttonlayout > #classicbackbuttoncontainer > .ps-button-wrapper > .ps-button {
+    background-image: linear-gradient(#ffcb06,#ffcb06) !important;
+    border: none !important;
+    border-radius: 20px !important;
+    box-shadow: inset 0 0 !important;
+    margin-top: .25em !important;
+    padding: 0.5em 1em 0.5em 0.5em !important;
+    padding-left: 0.5em !important;
+    padding-right: 1em !important;
+    vertical-align: bottom !important;
+}
+
+#classicbackbuttonlayout > #classicbackbuttoncontainer > .ps-button-wrapper > .ps-button > .ps-text {
+    color: black !important;
+    margin-left: 1.5em !important;
+}
+
+#classicbackbuttonlayout > #classicbackbuttoncontainer > .ps-button-wrapper > .ps-button:before {
+    content: url("https://sids-files.github.io/PT_NUI_BACK_PRIM_IMG_1.svg") !important;
+}
+
+#ptbr_header_container #pthdr2container {
+    background-image: linear-gradient(rgb(0, 42, 74),rgb(0, 42, 74)) !important;
+}
+
+#pthdr2navbar {
+    background-image: none !important;
+}
+
+#pthdr2navbarlinks a.headerbutton:hover, a.headerbutton:active {
+    background-color: #004a84 !important;
+    box-shadow: none !important;
+}
+
+#win0divDERIVED_SSS_SCL_SSS_PERSONAL_INFO > table {
+    width: 100% !important;
+}
+
+#win0divDERIVED_SSS_SCL_SS_ACAD_INFO_LINK > table {
+    width: 100% !important;
+}
+
+#win0divDERIVED_SSS_SCL_SS_MNG_FIN_LINK > table {
+    width: 100% !important;
+}
+
+#win0divPTNUI_LAND_WRK_GROUPBOX14grp, .ps_mod_wrapc, .ps_modal_container .ps_popup-menu .ps_menutype-grid .lpselbtn, [id*='ptModTable_'] {
+    height: auto !important;
+}
+
+.PABACKGROUNDINVISIBLE {
+    width: 100% !important;
+}
+
+.PABACKGROUNDINVISIBLE > tbody > tr > td:first-child, #ACE_DERIVED_SSS_SCL_TITLE1 > tbody > tr:nth-child(2) > td:nth-child(2) {
+}
+
+.PABACKGROUNDINVISIBLEWBO, .PABACKGROUNDINVISIBLEWBO > tbody > tr > td, .PABACKGROUNDINVISIBLEWBO > tbody > tr > td > table > tbody {
+    width: 100% !important;
+}
+
+.PSGROUPBOXLABEL {
+    background-color: #ffcb06 !important;
+    border-radius: 20px !important;
+    color: #002a4a !important;
+    padding-top: 5px !important;
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.PSGROUPBOXWBO {
+    border: none !important;
+}
+
+.PSHYPERLINKNOUL:hover, .PSSRCHRESULTSEVENROW a:hover, .PSSRCHRESULTSODDROW a:hover, .PAGRIDHEADER a:hover, .PSLEVEL1GRIDCOLUMNHDR a:hover, .PSLEVEL2GRIDCOLUMNHDR a:hover, .PSLEVEL3GRIDCOLUMNHDR a:hover, .PSLEVEL1GRIDCOLUMNHDRTXT a:hover, .PSLEVEL2GRIDCOLUMNHDRTXT a:hover, .PSLEVEL3GRIDCOLUMNHDRTXT a:hover, a:hover {
+    color: #ffcb06 !important;
+}
+
+.PSLEVEL1GRIDCOLUMNHDR:link, .PSLEVEL1GRIDCOLUMNHDR:visited, .PSLEVEL3GRIDCOLUMNHDR:visited, .PSLEVEL1GRIDCOLUMNHDR:link, .PSLEVEL1GRIDCOLUMNHDR:visited, .PSLEVEL3GRIDCOLUMNHDR:link, .PSLEVEL3GRIDCOLUMNHDR:visited, .PSLEVEL2GRIDCOLUMNHDR:link, .PSLEVEL2GRIDCOLUMNHDR:visited, a, a:visited {
+    color: #002a4a !important;
+}
+
+.PSLEVEL1GRIDLABEL, .PSLEVEL2GRIDLABEL, .PSLEVEL3GRIDLABEL, .PSLEVEL1SCROLLAREAHEADER, .PSLEVEL2SCROLLAREAHEADER, .PSLEVEL3SCROLLAREAHEADER {
+    background-color: #fff !important;
+    color: #002a4a !important;
+}
+
+.PSPAGECONTAINER > tbody > tr:nth-child(2) > td:nth-child(2) {
+    width: 100% !important;
+}
+
+.PSPUSHBUTTON span, .PSPUSHBUTTONTB span, .PSPUSHBUTTON span:hover, .PSPUSHBUTTONTBABORT span, .PSPUSHBUTTONTBADD span, .PSPUSHBUTTONTBADDMODE span, .PSPUSHBUTTONTBAPPLY span, .PSPUSHBUTTONTBCANCEL span, .PSPUSHBUTTONTBCLEAR span, .PSPUSHBUTTONTBCONTINUE span, .PSPUSHBUTTONTBCORRECTMODE span, .PSPUSHBUTTONTBDELETE span, .PSPUSHBUTTONTBIGNORE span, .PSPUSHBUTTONTBLOOKUP span, .PSPUSHBUTTONTBNEXTINLIST span, .PSPUSHBUTTONTBNEXTINWORKLIST span, .PSPUSHBUTTONTBNEXTTAB span, .PSPUSHBUTTONTBNO span, .PSPUSHBUTTONTBOK span, .PSPUSHBUTTONTBPOPUP span, .PSPUSHBUTTONTBPREVIEW span, .PSPUSHBUTTONTBPREVINLIST span, .PSPUSHBUTTONTBPREVINWORKLIST span, .PSPUSHBUTTONTBPREVTAB span, .PSPUSHBUTTONTBREFRESH span, .PSPUSHBUTTONTBREFRESH2 span, .PSPUSHBUTTONTBRETRY span, .PSPUSHBUTTONTBRETURN span, .PSPUSHBUTTONTBSAVE span, .PSPUSHBUTTONTBSEARCH span, .PSPUSHBUTTONTBSENDNOTIFY span, .PSPUSHBUTTONTBSPELLCHECK span, .PSPUSHBUTTONTBUPDATEALLMODE span, .PSPUSHBUTTONTBUPDATEMODE span, .PSPUSHBUTTONTBVIEWWORKLIST span, .PSPUSHBUTTONTBYES span, .PSPUSHBUTTONRETURN span, .PSPUSHBUTTONDISABLED span {
+    border-top: 1px solid rgba(254, 251, 244, 0) !important;
+}
+
+.PSPUSHBUTTON#Left, .PSPUSHBUTTON.Left {
+    background: #ffcb06 !important;
+    border: 1px solid #ffcb06 !important;
+    border-radius: 20px !important;
+}
+
+.PSPUSHBUTTONTB {
+    background: #ffcb06 !important;
+    border: none !important;
+    border-radius: 20px !important;
+    padding: 5px 10px 5px 10px !important;
+}
+
+.PTCOLLAPSE_ARROW:before {
+    background-image: url("https://sids-files.github.io/expand-button.svg") !important;
+    background-size: 14px 14px !important;
+    content: "" !important;
+    display: block !important;
+    height: 14px !important;
+    width: 14px !important;
+}
+
+.PTEXPAND_ARROW:before {
+    background-image: url("https://sids-files.github.io/keyboard-right-arrow-button.svg") !important;
+    background-size: 14px 14px !important;
+    content: "" !important;
+    display: block !important;
+    height: 14px !important;
+    width: 14px !important;
+}
+
+.nuitile .ps_groupleth > .ps-label {
+    text-align: center !important;
+}
+
+.ps_header_bar {
+    background-color: #002a4a !important;
+    background-image: none !important;
+}
+
+.ps_header_bar .ps_actions_cont .ps_system_cont .ps_header-navbar .ps-button, :root.psc_dir-rtl .ps_header_bar .ps_actions_cont .ps_system_cont .ps_header-navbar .ps-button {
+    background-image: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.ps_header_bar .ps_box-button:not(.psc_disabled) .ps-button:hover, :root.psc_dir-rtl .ps_header_bar .ps_box-button:not(.psc_disabled) .ps-button:hover {
+    background-color: #004a84 !important;
+    box-shadow: none !important;
+}
+
+.ps_menuitem:not(.psc_disabled):hover, .psc_rowact:not(.psc_disabled):hover {
+    background-color: #ffcb06 !important;
+	color: #ffffff !important;
+}
+
+.ps_menuitem > .ps_box-link > .ps-link-wrapper > .ps-link:hover, .ps_menuitem > .ps_box-link > .ps-link-wrapper > .ps-link:active, .ps_menutype-grid .ps_grid-row > .ps_box-link > .ps-link-wrapper > .ps-link:hover, .ps_menutype-grid .ps_grid-row > .ps_box-link > .ps-link-wrapper > .ps-link:active {
+	color: #002a4a !important;
+}
+
+.ps_modal_content, [id*='ptModTable_'], :root:not(.psc_mode-ag):not(.psc_mode-md) .nui_pagegb:not(.persmode) .nuitile .nuilp {
+    border-radius: 20px !important;
+}
+
+.ps_modalmask {
+    background-color: #000000 !important;
+}
+
+.ps_popup-menu li:not(.psc_hidden):first-child {
+    border-top-left-radius: 20px !important;
+    border-top-right-radius: 20px !important;
+}
+
+.ps_popup-menu li:not(.psc_hidden):last-child {
+    border-bottom-left-radius: 20px !important;
+    border-bottom-right-radius: 20px !important;
+}
+
+:root:not(.psc_mode-ag):not(.psc_mode-md) .pt_homepage {
+    background-color: #002a4a !important;
+}
+
+a:focus, img:focus, span:focus, input:focus, select:focus, input[type="button"]:focus {
+    outline: none !important;
+}
+
+.pt_homepage .lpfooter {
+	background: rgba(0, 42, 74, 0.8) !important;
+}
+
+#processing {
+	/*width: 32px !important;*/
+	opacity: 1 !important;
+	position: auto !important;
+}
+
+#WAIT_win0 {
+	top: 0px !important;
+	left: 0px !important;
+	width: 100% !important;
+	height: 100% !important;
+	background-color: rgba(0, 0, 0, 0.5) !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	flex-direction: column !important;
+}
+
+#HELP {
+	position: fixed !important;
+	top: 14px !important;
+	color: #ffcb06 !important;
+}
+
+html, body, span {
+	font-family: 'Roboto', sans-serif !important;
+}
+
+.PSPAGECONTAINER, #ACE_width, #ACE_\$ICField274, #win0divDERIVED_SSS_SCL_LS_PORT_HOLDS_LINK > table, #win0divDERIVED_SSS_SCL_SSS_SC_LNK1_NAMEGP > table, #win0divDERIVED_SSS_SCL_SSS_SC_LNK2_NAME > table, #win0divDERIVED_SSS_SCL_SSS_SC_LNK3_NAME > table, #win0divDERIVED_SSS_SCL_M_SR_LNK4_NAME > table, #win0divDERIVED_SSS_SCL_SS_APP_FINAID_LINK > table, #ACE_DERIVED_SSS_SCL_SS_APP_FINAID_LINK, #win0divM_HE_SSS_NPSWRK_DESCR100 > table, #ACE_DERIVED_SSS_SCL_SSS_PERSONAL_INFO, #win0divDERIVED_SSS_SCL_SS_MYPROFILE_LINK > table, #win0divDERIVED_SSS_SCL_SS_ADM_INFO_LINK > table, #ACE_DERIVED_SSS_SCL_SS_ADM_INFO_LINK, #M_RA_APP_PRG_VW\$scroll\$0 {
+	width: 100% !important;
+}
+
+#ACE_DERIVED_SSS_SCL_SS_MYPROFILE_LINK, #ACE_M_HE_SSS_NPSWRK_DESCR100 {
+	width: 100% !important;
+}
+
+#ACE_DERIVED_SSS_SCL_SS_MYPROFILE_LINK > tbody > tr:first-child > td:nth-child(4) {
+	width: 20% !important;
+}
+
+#M_HE_SSS_NPSWRK_DESCR100_2 {
+	position: absolute;
+    font-weight: bold;
+    margin: 0;
+    left: 33%;
+    font-size: 20px;
+    top: -5px;
+    width: auto;
+}
