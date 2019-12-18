@@ -4,7 +4,7 @@ import platform
 
 driver = ""
 opts = webdriver.ChromeOptions()
-opts.add_argument('headless')
+# opts.add_argument('headless')
 opts.add_argument('remote-debugging-port=9222')
 if _platform.startswith("linux"):
         driver = webdriver.Chrome(executable_path="webdrivers/chromedriver-linux", options=opts)
