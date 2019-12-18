@@ -58,15 +58,8 @@ def list_sec(pre_url):
 def find_sections(dept, cat):
     return list_sec(pre_url(dept, cat, get_term())) # Get term ID and pass it to pre_url()
 
-get_term()  
-print(find_sections('EECSS', '280'))
 
-#dept = 'MATH'
-#cat = '215'
+dept = 'EECS'
+cnum = '445'
 
-
-
-
-
-
-#print(soup)
+print(find_sections(dept, cnum))
