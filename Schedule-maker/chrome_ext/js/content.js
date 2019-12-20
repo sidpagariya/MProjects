@@ -55,12 +55,13 @@ function parseSchedule(){
         schedule.push(item);
     }
     jsonObj.schedule = schedule;
-    createICal(jsonObj);
+    return jsonObj;
 }
 
 chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.msg === 'get_userdata') {
         var jsonO = parseSchedule();
+        console.log(jsonO);
         sendResponse(jsonO);
     }
 });

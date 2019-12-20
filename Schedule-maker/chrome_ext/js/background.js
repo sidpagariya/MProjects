@@ -25,7 +25,7 @@ function weekMod(num){
     return num%7;
 }
 function createICal(jsonObj){
-    console.log(jsonObj);
+    // console.log(jsonObj);
     window.json = jsonObj;
     let vtimezoneComp = new ICAL.Component(ICAL.parse(vtimezone_str));
     let tzid = vtimezoneComp.getFirstPropertyValue('tzid');
@@ -33,7 +33,7 @@ function createICal(jsonObj){
         component: vtimezoneComp,
         tzid
     });
-    let cal = new ICAL.Component(['vcalendar', [["prodid", {}, "text", "-//SidPagariya.ML//UMich "+jsonObj['term']+"//EN"],
+    let cal = new ICAL.Component(['vcalendar', [["prodid", {}, "text", "-//SidPagariya.ME//UMich "+jsonObj['term']+"//EN"],
     ["version", {}, "text", "2.0"],
     ["X-Apple-Calendar-Color", {}, "text", "#FFCD00"]], []]); //Or maybe just #002B64 :P
     arbor_time = 'America/Detroit';
@@ -41,8 +41,9 @@ function createICal(jsonObj){
     cal.addSubcomponent(vtimezoneComp);
 
     // Need to change this every term :(
-    var start_date = new Date(2019, 0, 9); //YEAR, MONTH, DAY. MONTH is 0...11
-    var end_date = new Date(2019, 3, 23); //YEAR, MONTH, DAY. MONTH is 0...11
+    // Winter 2020
+    var start_date = new Date(2020, 0, 8); //YEAR, MONTH, DAY. MONTH is 0...11
+    var end_date = new Date(2020, 3, 21); //YEAR, MONTH, DAY. MONTH is 0...11
 
     for(course of jsonObj.schedule) {
         let classTitle = course.course.class;
@@ -58,9 +59,7 @@ function createICal(jsonObj){
             let start_time = course.sched[i].time.from;
             let end_time = course.sched[i].time.to;
 
-            // Need to change this every term :(
-            let offset = 5; //Schedules starting on Monday: 7, Tuesday: 6, etc.
-            //Winter 2019 ^
+            let offset = (start_date.getDay()>0)?(8-start_date.getDay()):(1); //Schedules starting on Monday: 7, Tuesday: 6, etc.
 
             let conversionO = {MO:weekMod(0+offset),TU:weekMod(1+offset),WE:weekMod(2+offset),TH:weekMod(3+offset),FR:weekMod(4+offset),SA:weekMod(5+offset),SU:weekMod(6+offset)};
             var minDiff = 10;
@@ -113,6 +112,7 @@ chrome.pageAction.onClicked.addListener(function (tab) {
         responseCallback=function(userdata) {
             calender = createICal(userdata, tab);
             let calendar_str = calender.toString();
+            console.log(calendar_str);
             let download_str_uri = 'data:text/calender;charset=utf-8,' + encodeURIComponent(calendar_str);
             chrome.downloads.download({
                 url: download_str_uri,
