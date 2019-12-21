@@ -19,9 +19,12 @@ function performOps() {
 function convertTime(time) {
     var hours = Number(time.match(/^(\d+)/)[1]);
     var minutes = Number(time.match(/:(\d+)/)[1]);
-    var AMPM = time.match(/AM|PM/)[0];
-    if (AMPM == "PM" && hours < 12) hours = hours + 12;
-    if (AMPM == "AM" && hours == 12) hours = hours - 12;
+    var AMPM = time.match(/AM|PM/);
+    if (AMPM !== null && AMPM !== undefined) {
+        AMPM = AMPM[0];
+        if(AMPM == "PM" && hours<12) hours = hours+12;
+        if(AMPM == "AM" && hours==12) hours = hours-12;
+    }
     var sHours = hours.toString();
     var sMinutes = minutes.toString();
     if (hours < 10) sHours = "0" + sHours;
