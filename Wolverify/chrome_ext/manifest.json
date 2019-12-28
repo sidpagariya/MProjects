@@ -8,10 +8,6 @@
         "64": "icons/Wolverify-64x64.png",
         "128": "icons/Wolverify-128x128.png"
     },
-    "page_action": {
-        "default_icon": "icons/Wolverify-32x32.png",
-        "default_title": "Wolverify page"
-    },
     "permissions": [
         "https://csprod.dsc.umich.edu/*",
         "https://hcmprod.dsc.umich.edu/*"
