@@ -116,7 +116,7 @@ chrome.pageAction.onClicked.addListener(function (tab) {
             let download_str_uri = 'data:text/calender;charset=utf-8,' + encodeURIComponent(calendar_str);
             chrome.downloads.download({
                 url: download_str_uri,
-                filename: userdata.term+".ics",
+                filename: userdata.title+".ics",
                 saveAs: true
             });
         }
