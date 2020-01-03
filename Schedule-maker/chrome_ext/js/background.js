@@ -33,7 +33,7 @@ function createICal(jsonObj){
         component: vtimezoneComp,
         tzid
     });
-    let cal = new ICAL.Component(['vcalendar', [["prodid", {}, "text", "-//SidPagariya.ME//UMich "+jsonObj['term']+"//EN"],
+    let cal = new ICAL.Component(['vcalendar', [["prodid", {}, "text", "-//SidPagariya.ME//UMich "+jsonObj['title']+"//EN"],
     ["version", {}, "text", "2.0"],
     ["X-Apple-Calendar-Color", {}, "text", "#FFCD00"]], []]); //Or maybe just #002B64 :P
     arbor_time = 'America/Detroit';
@@ -110,6 +110,9 @@ chrome.pageAction.onClicked.addListener(function (tab) {
         tab.id,
         {msg: 'get_userdata'},
         responseCallback=function(userdata) {
+            if (userdata === null || userdata === undefined){
+                return;
+            }
             calender = createICal(userdata, tab);
             let calendar_str = calender.toString();
             console.log(calendar_str);
@@ -130,6 +133,9 @@ chrome.runtime.onInstalled.addListener(function() {
         conditions: [
           new chrome.declarativeContent.PageStateMatcher({
             pageUrl: { urlContains: 'https://csprod.dsc.umich.edu/psp/csprodnonop/EMPLOYEE/SA/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL' },
+          }),
+          new chrome.declarativeContent.PageStateMatcher({
+            pageUrl: { urlContains: 'https://umich.collegescheduler.com/' },
           })
         ],
         actions: [ new chrome.declarativeContent.ShowPageAction() ]

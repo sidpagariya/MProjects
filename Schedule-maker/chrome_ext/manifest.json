@@ -17,7 +17,8 @@
         "downloads",
         "declarativeContent",
         "https://csprod.dsc.umich.edu/*",
-        "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/*"
+        "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/*",
+        "https://umich.collegescheduler.com/*"
     ],
     "background": {
         "scripts": [
@@ -29,7 +30,11 @@
     },
     "content_scripts": [
       {
-        "matches": ["https://csprod.dsc.umich.edu/psp/csprodnonop/EMPLOYEE/SA/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL", "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/Schedule.html"],
+        "matches": [
+            "https://csprod.dsc.umich.edu/psp/csprodnonop/EMPLOYEE/SA/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL",
+            "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/Schedule.html",
+            "https://umich.collegescheduler.com/*"
+        ],
         "js": [
             "js/jquery.min.js",
             "js/ical.min.js",
