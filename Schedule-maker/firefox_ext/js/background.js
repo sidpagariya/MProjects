@@ -117,7 +117,7 @@ browser.pageAction.onClicked.addListener(function (tab) {
             let calendar_str = calender.toString();
             console.log(calendar_str);
             let download_blob = new Blob([calendar_str], {type: 'text/calender;charset=utf-8'});
-            chrome.downloads.download({
+            browser.downloads.download({
                 'url': URL.createObjectURL(download_blob),
                 'filename': userdata.title+".ics",
                 'saveAs': true
