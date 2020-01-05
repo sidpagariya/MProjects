@@ -104,9 +104,9 @@ function createICal(jsonObj){
     return cal;
 }
 
-chrome.pageAction.onClicked.addListener(function (tab) {
+browser.pageAction.onClicked.addListener(function (tab) {
     currentTab = tab;
-    chrome.tabs.sendMessage(
+    browser.tabs.sendMessage(
         tab.id,
         {msg: 'get_userdata'},
         responseCallback=function(userdata) {
@@ -116,37 +116,12 @@ chrome.pageAction.onClicked.addListener(function (tab) {
             calender = createICal(userdata, tab);
             let calendar_str = calender.toString();
             console.log(calendar_str);
-            let download_str_uri = 'data:text/calender;charset=utf-8,' + encodeURIComponent(calendar_str);
-            chrome.downloads.download({
-                url: download_str_uri,
+            let download_blob = new Blob(calendar_str, {type: 'text/calender;charset=utf-8'});
+            browser.downloads.download({
+                url: download_blob,
                 filename: userdata.title+".ics",
                 saveAs: true
             });
         }
     );
-});
-
-chrome.runtime.onInstalled.addListener(function() {
-    chrome.tabs.onUpdated.addListener(function(tabId, changeInfo, tab) {
-        if (changeInfo.status === 'complete' && (tab.url.match(/https:\/\/csprod.dsc.umich.edu\/psp\/csprodnonop\/EMPLOYEE\/SA\/c\/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL/) || tab.url.match(/https:\/\/umich.collegescheduler.com\/*/))) {
-            chrome.pageAction.show(tabId);
-        } else {
-            chrome.pageAction.hide(tabId);
-        }
-    });
-//   chrome.declarativeContent.onPageChanged.removeRules(undefined, function() {
-//     chrome.declarativeContent.onPageChanged.addRules([
-//       {
-//         conditions: [
-//           new chrome.declarativeContent.PageStateMatcher({
-//             pageUrl: { urlContains: 'https://csprod.dsc.umich.edu/psp/csprodnonop/EMPLOYEE/SA/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL' },
-//           }),
-//           new chrome.declarativeContent.PageStateMatcher({
-//             pageUrl: { urlContains: 'https://umich.collegescheduler.com/' },
-//           })
-//         ],
-//         actions: [ new chrome.declarativeContent.ShowPageAction() ]
-//       }
-//     ]);
-//   });
 });

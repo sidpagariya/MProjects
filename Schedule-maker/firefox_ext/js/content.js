@@ -442,7 +442,7 @@ function parseScheduleSB(){
     return jsonObj;
 }
 
-chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
+browser.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.msg === 'get_userdata') {
         var jsonO = null;
         if (location.host === "umich.collegescheduler.com") {
