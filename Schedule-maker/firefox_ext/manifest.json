@@ -1,0 +1,45 @@
+{
+    "name": "UMich ScheduleMaker",
+    "version": "1.1",
+    "description": "Download an iCal file of your UMich Schedule!",
+    "icons": {
+        "16": "icons/ScheduleMaker-16x16.png",
+        "32": "icons/ScheduleMaker-32x32.png",
+        "64": "icons/ScheduleMaker-64x64.png",
+        "128": "icons/ScheduleMaker-128x128.png"
+    },
+    "page_action": {
+        "default_icon": "icons/ScheduleMaker-32x32.png",
+        "default_title": "UMich Schedule to iCal"
+    },
+    "permissions": [
+        "tabs",
+        "downloads",
+        "https://csprod.dsc.umich.edu/*",
+        "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/*",
+        "https://umich.collegescheduler.com/*"
+    ],
+    "background": {
+        "scripts": [
+            "js/jquery.min.js",
+            "js/ical.min.js",
+            "js/background.js"
+        ],
+        "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": [
+            "https://csprod.dsc.umich.edu/psp/csprodnonop/EMPLOYEE/SA/c/SA_LEARNER_SERVICES.SSS_STUDENT_CENTER.GBL",
+            "https://rawgit.com/sidpagariya/MProjects/master/Schedule-maker/Schedule.html",
+            "https://umich.collegescheduler.com/*"
+        ],
+        "js": [
+            "js/jquery.min.js",
+            "js/ical.min.js",
+            "js/content.js"
+        ]
+      }
+    ],
+    "manifest_version": 2
+}
