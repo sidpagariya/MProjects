@@ -122,7 +122,7 @@ browser.pageAction.onClicked.addListener(function (tab) {
                 'filename': userdata.title+".ics",
                 'saveAs': true
             });
-            browser.downloas.download();
+            browser.downloads.download();
         }
     );
 });
