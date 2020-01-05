@@ -116,12 +116,13 @@ browser.pageAction.onClicked.addListener(function (tab) {
             calender = createICal(userdata, tab);
             let calendar_str = calender.toString();
             console.log(calendar_str);
-            let download_blob = new Blob(calendar_str, {type: 'text/calender;charset=utf-8'});
-            browser.downloads.download({
-                url: download_blob,
-                filename: userdata.title+".ics",
-                saveAs: true
+            let download_blob = new Blob([calendar_str], {type: 'text/calender;charset=utf-8'});
+            chrome.downloads.download({
+                'url': URL.createObjectURL(download_blob),
+                'filename': userdata.title+".ics",
+                'saveAs': true
             });
+            browser.downloas.download();
         }
     );
 });
