@@ -41,9 +41,9 @@ function createICal(jsonObj){
     cal.addSubcomponent(vtimezoneComp);
 
     // Need to change this every term :(
-    // Winter 2020
-    var start_date = new Date(2020, 0, 8); //YEAR, MONTH, DAY. MONTH is 0...11
-    var end_date = new Date(2020, 3, 21); //YEAR, MONTH, DAY. MONTH is 0...11
+    // Fall 2020
+    var start_date = new Date(2020, 7, 31); //YEAR, MONTH, DAY. MONTH is 0...11
+    var end_date = new Date(2020, 11, 10); //YEAR, MONTH, DAY. MONTH is 0...11
 
     for(course of jsonObj.schedule) {
         let classTitle = course.course.class;
