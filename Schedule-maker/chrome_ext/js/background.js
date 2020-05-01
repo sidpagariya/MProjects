@@ -117,9 +117,10 @@ chrome.pageAction.onClicked.addListener(function (tab) {
             let calendar_str = calender.toString();
             console.log(calendar_str);
             let download_str_uri = 'data:text/calender;charset=utf-8,' + encodeURIComponent(calendar_str);
+            let filename_str = userdata.title.replace(/\//g, '-');
             chrome.downloads.download({
                 url: download_str_uri,
-                filename: userdata.title+".ics",
+                filename: filename_str+".ics",
                 saveAs: true
             });
         }

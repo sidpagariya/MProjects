@@ -383,54 +383,52 @@ function parseScheduleSB(){
         "Sweetland Center for Writing": "WRITING",
         "Yiddish": "YIDDISH"
     };
-    var table = $('#content > div.schedule-show > div.row.section-grid-row.hidden-sm.hidden-xs.show-for-print > div > table');
-    var termsched = $("#content > div.schedule-show > div.schedule-actions-container > div > div.row.bottom5.hidden-print > div.col-md-5.col-xs-9.pagination-row.no-padding-left.no-padding-right.hidden-acc.pull-right.view-button-container > span > div > ul > li.dropdown-header");
+    var table = $("div[class^='Scheduler-UI-Scripts-app-components-schedules-___Schedule__table___'] > div > table");
+    var termsched = $("div[class^='Scheduler-UI-Scripts-app-components-schedules-___ViewScheduleBase__actions___'] > div > ul > li.dropdown-header");
     if (termsched.length < 1) {
         termsched = "Schedule";
     } else {
         termsched = termsched[0].innerText;
     }
-    var tbodymain = table.children()[1];
+    var tbodymain = table[0];
     var jsonObj = {};
     jsonObj.title = termsched;
     var schedule = [];
 
-    for (var i = 0; i < tbodymain.childElementCount; i+=2) {
+    for (var i = 1; i < tbodymain.childElementCount; i+=1) {
         item = {}
-        var course = tbodymain.children[i].children;
-        var courseInfo = tbodymain.children[i+1];
-        if (courseInfo === undefined || (courseInfo.getAttribute("data-id") !== null && courseInfo.getAttribute("data-id") !== "")) {
-            tbodymain.children[i].children[1].children[0].children[0].children[0].click();
-            tbodymain = table.children()[1];
-            courseInfo = tbodymain.children[i+1].children[0].children[0].children[0].children[0].children[0];
+        var course = tbodymain.children[i].children[0].children;
+        var courseInfo = tbodymain.children[i].children[1].children[0].children[0];
+        if (courseInfo === undefined) {
+            tbodymain.children[i].children[0].children[1].children[0].click()
+            // tbodymain = table[0];
+            courseInfo = tbodymain.children[i].children[1].children[0].children[0].children[0].children[0].children[0];
         } else {
-            courseInfo = courseInfo.children[0].children[0].children[0].children[0];
+            courseInfo = courseInfo.children[0].children[0].children[0];
         }
         classI = {}
-        classI.class = classMap[course[5].innerText.trim()] + " " + course[6].innerText.trim();
-        classI.sec = course[4].innerText.trim();
-        classI.type = courseInfo.children[5].childNodes[1].data;
-        classI.nbr = course[3].innerText.trim();
+        classI.class = classMap[course[4].innerText.trim()] + " " + course[5].innerText.trim();
+        classI.sec = course[3].innerText.trim();
+        classI.type = courseInfo.children[5].childNodes[1].innerText;
+        classI.nbr = course[2].innerText.trim();
         item.course = classI;
-        var sched = course[7].children[0];
+        var sched = course[6].children[0].children[0].children;
         subscheds = [];
         locs = [];
-        if (sched !== undefined) {
-            sched = sched.childNodes;
+        if (sched.length > 0 && sched[0].childElementCount > 0) {
             var subschedObj = {"days": [], "time": {}};
-            for (var j = 1; j < sched.length; ++j) {
-                if (sched[j].nodeName === "SPAN"){
-                    subschedObj.days.push(sched[j].getAttribute("aria-label").substring(0, 2).toUpperCase());
-                } else {
-                    var time = {};
-                    var splStr = sched[j].data.trim().split(" - ");
-                    subschedObj.time.from = convertTime(splStr[0]);
-                    subschedObj.time.to = convertTime(splStr[1]);
-                    locs.push(splStr[2]);
-                    if (subschedObj !== {}) {
-                        subscheds.push(subschedObj);
-                        subschedObj = {"days": [], "time": {}};
-                    }
+            for (var j = 0; j < sched.length; ++j) {
+                for (var k = 0; k < sched[j].childNodes[0].childElementCount; ++k) {
+                    subschedObj.days.push(sched[j].childNodes[0].childNodes[k].getAttribute("aria-label").substring(0, 2).toUpperCase());
+                }
+                var splStr = sched[j].childNodes[1].data.trim().split(" - ");
+                subschedObj.time.from = convertTime(splStr[0]);
+                subschedObj.time.to = convertTime(splStr[1]);
+                splStr = sched[j].childNodes[3].data.trim().split("- ")
+                locs.push(splStr[1]);
+                if (subschedObj !== {}) {
+                    subscheds.push(subschedObj);
+                    subschedObj = {"days": [], "time": {}};
                 }
             }
         }
@@ -446,7 +444,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.msg === 'get_userdata') {
         var jsonO = null;
         if (location.host === "umich.collegescheduler.com") {
-            if ($('.time-events').length < 1) {
+            if ($("div[class^='Scheduler-UI-Scripts-app-components-schedules-___Schedule__table___']").length < 1) {
                 alert("Please go to a valid Schedule page.");
             } else {
                 jsonO = parseScheduleSB();
