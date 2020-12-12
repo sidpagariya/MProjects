@@ -383,8 +383,8 @@ function parseScheduleSB(){
         "Sweetland Center for Writing": "WRITING",
         "Yiddish": "YIDDISH"
     };
-    var table = $("div[class^='Scheduler-UI-Scripts-app-components-schedules-___Schedule__table___'] > div > table");
-    var termsched = $("div[class^='Scheduler-UI-Scripts-app-components-schedules-___ViewScheduleBase__actions___'] > div > ul > li.dropdown-header");
+    var table = $("table");
+    var termsched = $("#scheduler-app > div > main > div > div > div > ul > li.dropdown-header");
     if (termsched.length < 1) {
         termsched = "Schedule";
     } else {
@@ -409,7 +409,12 @@ function parseScheduleSB(){
         classI = {}
         classI.class = classMap[course[4].innerText.trim()] + " " + course[5].innerText.trim();
         classI.sec = course[3].innerText.trim();
-        classI.type = courseInfo.children[5].childNodes[1].innerText;
+        if (courseInfo.children[5].childNodes[0].innerText.indexOf("Seats Open") !== -1) {
+            classI.type = courseInfo.children[6].childNodes[1].innerText;
+        } else {
+            classI.type = courseInfo.children[5].childNodes[1].innerText;
+        }
+        console.log(classI.type)
         classI.nbr = course[2].innerText.trim();
         item.course = classI;
         var sched = course[6].children[0].children[0].children;
@@ -444,7 +449,7 @@ chrome.runtime.onMessage.addListener(function (msg, sender, sendResponse) {
     if (msg.msg === 'get_userdata') {
         var jsonO = null;
         if (location.host === "umich.collegescheduler.com") {
-            if ($("div[class^='Scheduler-UI-Scripts-app-components-schedules-___Schedule__table___']").length < 1) {
+            if (!/(schedules|favorites)\/[a-zA-Z0-9]*/.test(location.href)) {
                 alert("Please go to a valid Schedule page.");
             } else {
                 jsonO = parseScheduleSB();
