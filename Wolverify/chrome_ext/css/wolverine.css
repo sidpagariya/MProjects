@@ -140,8 +140,24 @@
 .nuitile .ps_groupleth > .ps-label {
     text-align: center !important;
 }
+.ps_box-headerbranding, #win0hdrdivPT_BRAND_COMPINFO {
+    border-bottom: none;
+    position: absolute;
+    z-index: 2;
+    left: 170px;
+    top: 3px;
+}
+#win0hdrdivPT_BRAND_COMPINFO {
+    left: 0px;
+}
 
-.ps_header_bar {
+@media only screen and (max-width: 840px) {
+    .ps_box-headerbranding {
+        display: none;
+    }
+}
+
+.ps_header_bar, .ps_box-headerbranding {
     background-color: #002a4a !important;
     background-image: none !important;
 }
@@ -157,17 +173,27 @@
     box-shadow: none !important;
 }
 
-.ps_menuitem:not(.psc_disabled):hover, .psc_rowact:not(.psc_disabled):hover {
+.ps_menuitem:not(.psc_disabled):hover, .psc_rowact:not(.psc_disabled):hover, .ps_box-menuitem > .ps_box-link:hover {
     background-color: #ffcb06 !important;
-    color: #ffffff !important;
 }
 
 .ps_menuitem > .ps_box-link > .ps-link-wrapper > .ps-link:hover, .ps_menuitem > .ps_box-link > .ps-link-wrapper > .ps-link:active, .ps_menutype-grid .ps_grid-row > .ps_box-link > .ps-link-wrapper > .ps-link:hover, .ps_menutype-grid .ps_grid-row > .ps_box-link > .ps-link-wrapper > .ps-link:active {
     color: #002a4a !important;
 }
 
+
 .ps_modal_content, [id*='ptModTable_'], :root:not(.psc_mode-ag):not(.psc_mode-md) .nui_pagegb:not(.persmode) .nuitile .nuilp {
     border-radius: 20px !important;
+    border: none;
+    -moz-box-shadow: 0px 1px 11px 0px #001b2f;
+    -webkit-box-shadow: 0px 1px 11px 0px #001b2f;
+    box-shadow: 0px 1px 11px 0px #001b2f;
+}
+
+.ps_modal_content, [id*='ptModTable_'], :root:not(.psc_mode-ag):not(.psc_mode-md) .nui_pagegb:not(.persmode) .nuitile .nuilp:hover {
+    -moz-box-shadow: 0px 1px 8px 0px #ffcb06;
+    -webkit-box-shadow: 0px 1px 8px 0px #ffcb06;
+    box-shadow: 0px 1px 8px 0px #ffcb06;
 }
 
 .ps_modalmask {
