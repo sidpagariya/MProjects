@@ -1,6 +1,6 @@
 {
     "name": "UMich ScheduleMaker",
-    "version": "1.4.0",
+    "version": "1.4.1",
     "description": "Download an iCal file of your UMich Schedule!",
     "icons": {
         "16": "icons/ScheduleMaker-16x16.png",

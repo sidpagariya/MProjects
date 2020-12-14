@@ -398,6 +398,7 @@ function parseScheduleSB(){
     for (var i = 1; i < tbodymain.childElementCount; i+=1) {
         item = {}
         var course = tbodymain.children[i].children[0].children;
+        var offset = course.length > 8 ? 1 : 0
         var courseInfo = tbodymain.children[i].children[1].children[0].children[0];
         if (courseInfo === undefined) {
             tbodymain.children[i].children[0].children[1].children[0].click()
@@ -407,17 +408,25 @@ function parseScheduleSB(){
             courseInfo = courseInfo.children[0].children[0].children[0];
         }
         classI = {}
-        classI.class = classMap[course[4].innerText.trim()] + " " + course[5].innerText.trim();
-        classI.sec = course[3].innerText.trim();
+        if (classMap[course[4+offset].innerText.trim()] === undefined) {
+            classI.class = course[4+offset].innerText.trim() + " " + course[5+offset].innerText.trim();
+        } else {
+            classI.class = classMap[course[4+offset].innerText.trim()] + " " + course[5+offset].innerText.trim();
+        }
+        
+        // console.log(classI.class)
+        classI.sec = course[3+offset].innerText.trim();
+        // console.log(classI.sec)
         if (courseInfo.children[5].childNodes[0].innerText.indexOf("Seats Open") !== -1) {
             classI.type = courseInfo.children[6].childNodes[1].innerText;
         } else {
             classI.type = courseInfo.children[5].childNodes[1].innerText;
         }
-        console.log(classI.type)
-        classI.nbr = course[2].innerText.trim();
+        // console.log(classI.type)
+        classI.nbr = course[2+offset].innerText.trim();
+        // console.log(classI.nbr)
         item.course = classI;
-        var sched = course[6].children[0].children[0].children;
+        var sched = course[6+offset].children[0].children[0].children;
         subscheds = [];
         locs = [];
         if (sched.length > 0 && sched[0].childElementCount > 0) {
